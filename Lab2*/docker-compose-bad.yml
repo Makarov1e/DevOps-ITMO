@@ -1,0 +1,13 @@
+services:
+  app:
+    image: myapp:latest
+    environment:
+      - SECRET_KEY=mysecretkey
+    ports:
+      - "8080:80"
+  db:
+    image: postgres:latest
+    environment:
+      - POSTGRES_PASSWORD=supersecret
+    volumes:
+      - ./some_nonexistent_dir:/var/lib/postgresql/data
